@@ -1,7 +1,22 @@
 Hashketball Review
 ==================
 
-## Objectives
+## SWBAT (Intro)
+
+* Get the lecture code via git
+* Begin formulating their own **process** and do things like:
+  * Follow the flow of code
+  * Check data types
+  * Test assumptions
+    * What do you expect?
+    * What do you get?
+  * Debugging techniques:
+    * `pry`
+    * `puts`
+  * Learn via playing with code
+* Begin learning how to test their own code
+
+## Objectives (Hashketball)
 
 * Distinguish between data types in Ruby
 * Show how to look up documentation for data types in Ruby
@@ -16,18 +31,6 @@ Hashketball Review
   * `rspec --fail-fast` handle one error at a time
   * Red, Green, Refactor
   * Make it work (shameless green), make it right, make it fast
-
-## SWBAT
-
-* Begin formulating their own **process** and do things like:
-  * Check data types
-  * Test assumptions
-    * What do you expect?
-    * What do you get?
-  * Debugging techniques:
-    * `pry`
-    * `puts`
-  * Learn via playing with code
 
 ---
 
