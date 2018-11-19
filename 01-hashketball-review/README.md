@@ -16,15 +16,27 @@ Hashketball Review
   * Learn via playing with code
 * Begin learning how to test their own code
 
+**Summary**
+
+* Use `puts` to help understand code flow / program execution
+* Use `.class` to check data types
+* Understand what can be done to different data types
+  * (ex: can't add a number to an array)
+* Use `pry` to investigate the code
+  * If you `pry` above the code, it won't exist!
+  * If you `pry` after an error, you'll never hit the `pry`
+* Googling, reading docs, playing with code to understand it.
+
+
 ## Objectives (Hashketball)
 
 * Distinguish between data types in Ruby
 * Show how to look up documentation for data types in Ruby
 * Demonstrate the use of common Array methods
-  * `#each`
+  * `#each` => do something on every value in the array; always returns the original array
   * `#map`
   * `#select`
-  * `#find`
+  * `#find` => finds things in an array; always returns some thing (either the found value or nil)
 * Differentiate array methods by their respective return values
 * Define the Single Responsibility Principle
 * Employ test-driven development best practices in their labs
