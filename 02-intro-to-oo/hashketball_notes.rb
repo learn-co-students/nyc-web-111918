@@ -171,6 +171,14 @@ end
 ##### TODAY'S LECTURE CODE! #####
 #################################
 
+# THE PROBLEM!
+#   These Hashes have different data.
+#   They represent different objects.
+#   A Hash of a player should be different from a Hash of a cat.
+#   Logically, they should also have different methods
+#   specific to them.
+#   JUST LIKE how a Hash as different methods than a Fixnum
+
 alan_anderson = {
   player_name: "Alan Anderson",
   number: 0,
@@ -197,11 +205,33 @@ reggie_evans = {
 
 c1 = { fur_color: "tiger striped", name: "Gwen", anger_level: 10 }
 
-class Player
+# THE SOLUTION!
+#   create a custom class / object to represent a new object
+#   (object being a thing)
+class Player # this has to be capitalized
+  # Macros => Writes the getter and setter methods for us.
+  # getter + setter methods
   attr_accessor :number, :shoe_size, :points, :rebounds, :assists, :steals, :blocks, :slam_dunks
-  attr_reader :player_name
-  # attr_writer :number, :shoe_size, :points, :rebounds, :assists, :steals, :blocks, :slam_dunks
 
+  # getter method
+  attr_reader :player_name #, :number, :shoe_size, :points, :rebounds, :assists, :steals, :blocks, :slam_dunks
+  # instance method => getter
+  # def player_name
+  #   @player_name
+  # end
+
+  # setter method
+  # attr_writer :number, :shoe_size, :points, :rebounds, :assists, :steals, :blocks, :slam_dunks
+  # instance method => setter
+  # def player_name=(player_name)
+  #   @player_name = player_name
+  # end
+
+  # an instance => a moment
+  # @instance_variable <= @ sign in front is an instance variable
+
+  # This is the method called when we do .new
+  # It creates a new _instance_ of a Player
   def initialize(player_name, number, shoe, points, rebounds, assists, steals, blocks, slam_dunks)
     @player_name = player_name
     @number = number
@@ -211,12 +241,29 @@ class Player
     @assists = assists
     @steals = steals
     @blocks = blocks
-    @slam_dunks = slam_dunks
+    @slam_dunks = slam_dunks # instance variables, stay with the instance!
+    steal = steals # local variable, disappears!
   end
 
+  # You write instance methods so your custom object, Player,
+  # can do work specific to that type of object.
+  # Hashes do Hashy things. Players to Playery things.
+  # Example: A Player _instance_ can slam_dunk a basketball.
   def slam_dunk
+    # When you dunk, your @slam_dunks go up AND @points go up.
     @slam_dunks += 1
-    self.score_two
+    # @points += 2
+    # Alternatively, you can do this!
+    self.score_two # WHAAAAT??
+
+    self # <= what is this?
+    # self can be called anywhere
+    # it will tell you who called the method you are in
+    # So ask yourself, who called me? => That's self!
+
+    # self in an instance method is the instance that called it
+    # So self.score_two is calling the score_two instance method.
+
     puts "OOOOOHHHHHH!!!"
   end
 
@@ -227,11 +274,17 @@ class Player
 
   def score_two
     # @points += 2
+    # can also be (because we have a setter method):
     self.points += 2
   end
 
+  # Left off here.
+  # This is a Class method. Methods for the entire Class!
+  # Called with Player.example
   def self.example
-    binding.pry
+    self # <= what is this?
+    # The class called it, so it should be Player!
+    # What might be useful for Player?
   end
 end # end of Player class
 
