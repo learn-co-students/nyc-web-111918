@@ -171,6 +171,20 @@ end
 ##### TODAY'S LECTURE CODE! #####
 #################################
 
+# EVERYTHING IS AN OBJECT IN RUBY!
+#   an object has a pre-defined description of what it is or what it does
+#   an object is prototype of a type of thing
+#   an object is a thing that can be defined and manipulated
+#   an object is a stored method that has a specific function
+
+# Objects have methods. They respond to messages to do work.
+# They cannot respond to messages (methods) that they don't
+# understand!
+
+# Ruby
+# - Syntactic Sugar => makes some syntax much nicer
+
+
 # THE PROBLEM!
 #   These Hashes have different data.
 #   They represent different objects.
