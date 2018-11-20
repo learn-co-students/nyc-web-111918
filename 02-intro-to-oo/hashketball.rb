@@ -198,9 +198,16 @@ reggie_evans = {
 c1 = { fur_color: "tiger striped", name: "Gwen", anger_level: 10 }
 
 class Player
+  # binding.pry
+
   attr_accessor :number, :shoe_size, :points, :rebounds, :assists, :steals, :blocks, :slam_dunks
   attr_reader :player_name
   # attr_writer :number, :shoe_size, :points, :rebounds, :assists, :steals, :blocks, :slam_dunks
+
+  # This type of variable is tied to the entire class
+  # define it in the class, and set it to some default value
+  @@class_variable = "whatever"
+  @@all = []
 
   def initialize(player_name, number, shoe, points, rebounds, assists, steals, blocks, slam_dunks)
     @player_name = player_name
@@ -212,6 +219,12 @@ class Player
     @steals = steals
     @blocks = blocks
     @slam_dunks = slam_dunks
+
+    # binding.pry
+    # in here, because we are making instances here,
+    # why don't we store that instance in some giant
+    # global directory of all Players?
+    @@all << self # self inside of initialize is the instance being made
   end
 
   def slam_dunk
@@ -230,8 +243,24 @@ class Player
     self.points += 2
   end
 
+  #   Player.example
   def self.example
     binding.pry
+  end
+
+  def self.all
+    @@all
+  end
+
+  def self.found_player(player_name)
+    Player.all.find do |player| # player Hash
+      # String                # String
+      player.player_name == player_name # Boolean
+    end
+  end
+
+  def self.num_points_scored(player_name)
+
   end
 end # end of Player class
 
@@ -247,9 +276,45 @@ p8 = Player.new("DeSagna Diop", 2, 14, 24, 12, 12, 4, 5, 5)
 p9 = Player.new("Ben Gordon", 8, 15, 33, 3, 2, 1, 1, 0)
 p10 = Player.new("Brendan Haywood", 33, 15, 6, 12, 12, 22, 5, 12)
 
+# LET's NOT DO THIS!
+# $all_players = [p1,p2,p3,p4,p5,p6,p7,p8,p9,p10]
 
+# Whose responsbility, who does this method belong to?
+def found_player(player_name)
+  # Array of player Hashes
+  Player.all.find do |player| # player Hash
+    # String                # String
+    player.player_name == player_name # Boolean
+  end
+end
 
+def num_points_scored(player_name)
+  # Hash       # String     #Symbol
+  found_player(player_name).points # Number
+end
 
+p11 = Player.new("Air Bud", 33, 15, 6, 12, 12, 22, 5, 12)
+# $all_players << p11
+
+# The goal is to find all those Player objects, but where do we look?
+
+# c1 = { fur_color: "tiger striped", name: "Gwen", anger_level: 10 }
+class Cat
+  attr_reader :fur_color, :name
+  attr_accessor :anger_level
+
+  def initialize(fur_color, name, anger_level)
+    @fur_color = fur_color
+    @name = name
+    @anger_level = anger_level
+  end
+
+  def meow
+    puts "Meeeeoow!"
+  end
+end # end of Cat class
+
+c1 = Cat.new("tiger striped", "Gwen", 10)
 
 binding.pry
 

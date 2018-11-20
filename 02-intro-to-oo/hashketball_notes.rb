@@ -277,7 +277,8 @@ class Player # this has to be capitalized
 
     # self in an instance method is the instance that called it
     # So self.score_two is calling the score_two instance method.
-
+    # binding.pry
+    # self.slam_dunk
     puts "OOOOOHHHHHH!!!"
   end
 
@@ -289,7 +290,7 @@ class Player # this has to be capitalized
   def score_two
     # @points += 2
     # can also be (because we have a setter method):
-    self.points += 2
+    self.points += 2 # self.points = self.points + 2
   end
 
   # Left off here.
