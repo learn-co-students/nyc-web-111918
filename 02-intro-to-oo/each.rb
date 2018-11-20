@@ -151,6 +151,14 @@ def found_player(player_name)
     # String                # String
     player[:player_name] == player_name # Boolean
   end
+
+  found_player = nil
+  all_players.each do |player|
+    if player[:player_name] == player_name
+      found_player = player
+    end
+  end
+  found_player
 end
 
 # Array of Strings    # Array of player Hashes
@@ -158,11 +166,25 @@ player_names        = all_players.map do |player| # player Hash
   player[:player_name] # String
 end
 
+player_names = []
+all_players.each do |player|
+  player_names << player[:player_name]
+end
+player_names
+
 # Array of player Hashes    # Array of player Hashes
 big_shoe_players          = all_players.select do |player| # player Hash
   # Number        # Number
   player[:shoe] > 10 # Boolean
 end
+
+big_shoe_players = []
+all_players.each do |player|
+  if player[:shoe] > 10
+    big_shoe_players << player
+  end
+end
+big_shoe_players
 
 binding.pry
 

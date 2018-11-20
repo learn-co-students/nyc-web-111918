@@ -146,6 +146,7 @@ end
 #   player_name => String
 # Return => a player Hashes
 def found_player(player_name)
+  binding.pry
   # Array of player Hashes
   all_players.find do |player| # player Hash
     # String                # String
@@ -163,6 +164,88 @@ big_shoe_players          = all_players.select do |player| # player Hash
   # Number        # Number
   player[:shoe] > 10 # Boolean
 end
+
+alan_anderson = {
+  player_name: "Alan Anderson",
+  number: 0,
+  shoe: 16,
+  points: 22,
+  rebounds: 12,
+  assists: 12,
+  steals: 3,
+  blocks: 1,
+  slam_dunks: 1
+}
+
+reggie_evans = {
+  player_name: "Reggie Evans",
+  number: 30,
+  shoe: 14,
+  points: 12,
+  rebounds: 12,
+  assists: 12,
+  steals: 12,
+  blocks: 12,
+  slam_dunks: 7
+}
+
+c1 = { fur_color: "tiger striped", name: "Gwen", anger_level: 10 }
+
+# create a custom class / object
+class Player # this has top be capitalized
+  attr_accessor :number, :shoe_size, :points, :rebounds, :assists, :steals, :blocks, :slam_dunks
+  # macro
+  attr_reader :player_name #, :number, :shoe_size, :points, :rebounds, :assists, :steals, :blocks, :slam_dunks
+  # attr_writer :number, :shoe_size, :points, :rebounds, :assists, :steals, :blocks, :slam_dunks
+
+  # an instance => a moment
+  # @instance_variable <= @ sign in front is an instance variable
+
+  # This is the method called when we do .new
+  def initialize(player_name, number, shoe, points, rebounds, assists, steals, blocks, slam_dunks)
+    @player_name = player_name
+    @number = number
+    @shoe_size = shoe
+    @points = points
+    @rebounds = rebounds
+    @assists = assists
+    @steals = steals
+    @blocks = blocks
+    @slam_dunks = slam_dunks # instance variables, stay with the instance!
+    steal = steals # local variable, disappears!
+  end
+
+  def slam_dunk
+    binding.pry
+    # self in an instance method is the instance that called it
+    self.score_two
+    @slam_dunks += 1
+  end
+
+  def score_two
+    @points = @points + 2
+  end
+
+  def self.example
+    binding.pry
+    # who called me? => self
+  end
+  # instance method => getter
+  # def player_name
+  #   # player_name
+  #   @player_name
+  # end
+
+  # instance method => setter
+  # def player_name=(player_name)
+  #   @player_name = player_name
+  # end
+
+
+end # end of Player class
+
+alan = Player.new("Alan", 1, 4, 1, 1, 12, 12, 12, 7)
+reggie = Player.new("Reggie", 1, 4, 1, 1, 12, 12, 12, 7)
 
 binding.pry
 
