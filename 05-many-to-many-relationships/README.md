@@ -13,17 +13,14 @@
   * Go through other example domains
 * Expand on relationships to express many to many
   * We'll build out a **new** relationship from scratch to teach this concept
-    * S - Student - Squirrel  - Squirrel
-    * T - Teacher - Tree      - Tree
-    * N - Name    - Nuts      - Nest
 
 ## Recap
 
 ### Define
 
-* _Model_ - A class whose primary responsibility is to store data
-* _Domain_ - The subject matter of the problem, (e.g., Learn's domain is online education)
-* _Domain modeling_ - Creating models for your domain to represent real or abstract ideas (e.g., Learn's domain model includes modules, cohorts, assignments as well as their relationships)
+* _Model_ - is a blueprint == class; A class whose primary responsibility is to store data
+* _Domain_ - what you're doing; The subject matter of the problem, (e.g., Learn's domain is online education)
+* _Domain modeling_ - it's the blueprint of what you're doing; it's the process of modeling your domain; Creating models for your domain to represent real or abstract ideas (e.g., Learn's domain model includes modules, cohorts, assignments as well as their relationships)
 * _Relationships_ - How one model or thing is connected to another model or thing
   * _One to many relationship_ - A relationship describing a single model that contains or keeps track of other models (a tree has many leaves, an organism has many cells, the universe has many galaxies)
   * _Many to many relationship_ (today!)

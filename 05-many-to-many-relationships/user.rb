@@ -1,19 +1,23 @@
 class User
   attr_reader :username #, :tweets
 
+  @@all = []
+  
   def initialize(usernmae)
     @username = username
-    # @tweets = [] # this is what we ended up removing
+    # @tweets = [] # this is the bad way
   end
 
   def post_tweet(message)
     Tweet.new(message, self)
-    # we don't want to keep track of tweets as it would duplicate data
+    # this was required to do it the bad way
     # @tweets << my_tweet
   end
 
   def tweets
-    # @tweets # this then became the below select; we calculate
+    # bad way made this easy, but made the reverse very hard
+    # @tweets
+    # instead, calculate it like so:
     Tweet.all.select do |tweet|
       tweet.user == self
     end
