@@ -24,11 +24,14 @@
 
 ### Define
 
-* Model
-* Domain
-* Domain modeling
-* Relationships
+* Model - is a blueprint = class
+* Domain - what you're doing, it's the subject matter you're working with; Learn => learning, teaching; YouTube => wasting time
+* Domain modeling - it's the blueprint of what you're doing;
+                    it's the process of modeling your domain
+* Relationships - they exist between models
   * One to many relationship
+    * team `has_many` players
+    * player `belongs_to` a team
   * Many to many relationship (for next lecture!)
   * belongs to
   * has many

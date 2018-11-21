@@ -234,6 +234,8 @@ class Player # this has to be capitalized
   # A place to store information pertinant to the entire
   # Player class.
   @@all = [] # Array of Player instances
+  ALL = [] # this cannot change it's data type
+  all = []
 
   # This is the method called when we do Player.new
   # It creates a new _instance_ of a Player
@@ -425,6 +427,8 @@ class Cat
     @fur_color = fur_color
     @name = name
     @anger_level = anger_level
+
+    @@all << self # storing a reference to the cat instance
   end
 
   def meow
@@ -433,9 +437,13 @@ class Cat
 
   # Angry cats are willing to fight.
   def self.cat_army
-    self.all.select do |cat|
+    @@all.select do |cat|
       cat.anger_level > 7
     end
+  end
+
+  def self.all
+    @@all
   end
 end # end of Cat class
 
