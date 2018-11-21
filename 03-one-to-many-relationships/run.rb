@@ -3,6 +3,8 @@
 require 'pry'
 require_relative './cat'
 require_relative './team'
+require_relative './user'
+require_relative './tweet'
 
 # t1.players
 
@@ -53,6 +55,18 @@ p11 = Player.new("Air Bud", "k9", 9001, 9002, 9003, 9004, 9005, 9006, 9007, t3)
 c1 = Cat.new("tiger striped", "Gwen", 10)
 c2 = Cat.new("brown", "Cinnamon", 9001)
 c3 = Cat.new("black and white", "Sugar", 1)
+
+u1 = User.new("Mike Cheng")
+u2 = User.new("Joyce")
+u3 = User.new("Matt")
+
+tw1 = Tweet.new("Go Pokemon!", u1)
+tw2 = Tweet.new("Pokemon Go!", u1)
+tw3 = Tweet.new("Squirtle Squirtle!", u3)
+tw4 = Tweet.new("Char char!", u3)
+tw5 = Tweet.new("Oh my gosh!", u2)
+tw6 = Tweet.new("#hashtag", u2)
+
 
 binding.pry
 
