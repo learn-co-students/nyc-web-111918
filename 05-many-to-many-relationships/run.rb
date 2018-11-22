@@ -3,11 +3,15 @@ require_relative './team'
 require_relative './player'
 require_relative './user'
 require_relative './tweet'
+require_relative './color'
+require_relative './team_color'
+require_relative './like'
 
 # name, colors, players
-t1 = Team.new("Brooklyn Nets", ["Black", "White"])
-t2 = Team.new("Charlotte Hornets", ["Turquoise", "Purple"])
-t3 = Team.new("Timberwolves", ["Blue", "Yellow"])
+t1 = Team.new("Brooklyn Nets")
+t2 = Team.new("Charlotte Hornets")
+t3 = Team.new("Timberwolves")
+t4 = Team.new("New York Knicks")
 
 # Making instances of a Player
 p1 = Player.new("Alan Anderson", 0, 16, 22, 12, 12, 3, 1, 1, t1)
@@ -34,6 +38,28 @@ tw4 = Tweet.new("Char char!", u3)
 tw5 = Tweet.new("Oh my gosh!", u2)
 tw6 = Tweet.new("#hashtag", u2)
 
+l1 = Like.new(u1, tw4)
+l2 = Like.new(u1, tw5)
+l3 = Like.new(u2, tw1)
+l4 = Like.new(u3, tw6)
+l5 = Like.new(u3, tw5)
+
+c1 = Color.new("Black")
+c2 = Color.new("White")
+c3 = Color.new("Turquoise")
+c4 = Color.new("Purple")
+c5 = Color.new("Blue")
+c6 = Color.new("Yellow")
+c7 = Color.new("Orange")
+
+tc1 = TeamColor.new(t1, c1)
+tc2 = TeamColor.new(t1, c2)
+tc3 = TeamColor.new(t2, c3)
+tc4 = TeamColor.new(t2, c4)
+tc5 = TeamColor.new(t3, c5)
+tc6 = TeamColor.new(t3, c6)
+tc7 = TeamColor.new(t4, c5)
+tc8 = TeamColor.new(t4, c7)
 
 binding.pry
 
