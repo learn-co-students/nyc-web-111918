@@ -8,7 +8,6 @@ require_relative './tweet'
 t1 = Team.new("Brooklyn Nets", ["Black", "White"])
 t2 = Team.new("Charlotte Hornets", ["Turquoise", "Purple"])
 t3 = Team.new("Timberwolves", ["Blue", "Yellow"])
-t4 = Team.new("New York Knicks", ["Blue", "Orange"])
 
 # Making instances of a Player
 p1 = Player.new("Alan Anderson", 0, 16, 22, 12, 12, 3, 1, 1, t1)
