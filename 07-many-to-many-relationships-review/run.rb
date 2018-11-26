@@ -3,6 +3,29 @@ require_relative './team'
 require_relative './player'
 require_relative './user'
 require_relative './tweet'
+require_relative './book'
+require_relative './author'
+
+# name, age
+a1 = Author.new("Mike", 33)
+a2 = Author.new("Stephen King", 71)
+
+# title, edition = 1, published_date
+b1 = Book.new(a1, "The Joys of Ruby", 2011)
+b2 = Book.new(a2, "The Misery", 1987)
+b3 = Book.new(a2, "Pet Cemetary", 1983)
+
+
+
+
+
+
+
+
+
+
+
+
 
 # name, colors, players
 t1 = Team.new("Brooklyn Nets", ["Black", "White"])

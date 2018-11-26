@@ -7,6 +7,18 @@
 * Demonstrate _Single Source of Truth_ by **not** storing collections of objects on other objects
 * Demonstrate _Single Source of Truth_ by **not** storing one object in multiple collections
 
+
+Books
+=====
+
+genre
+book
+  title
+  published_date
+author
+publisher
+
+
 ## Outline
 
 * Review Relationships (one to many => `has_many`, `belongs_to`)
