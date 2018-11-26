@@ -5,6 +5,30 @@ require_relative './user'
 require_relative './tweet'
 require_relative './book'
 require_relative './author'
+require_relative './squirrel'
+require_relative './nest'
+require_relative './tree'
+
+
+# Squirrels, Trees
+# <= Becase the Nest needs to know what it belongs_to
+
+# color, squishiness, anger_level
+s1 = Squirrel.new("red", "very", 10)
+s2 = Squirrel.new("black", "moderately", 2)
+s3 = Squirrel.new("white", "extremely like a cloud", 0)
+
+# branches, leaves, tallness (miles)
+tr1 = Tree.new(300, 300, 300)
+tr2 = Tree.new(1, 100, 1)
+tr3 = Tree.new(5, 0, 70000)
+
+# tree, squirrel, size, material(s) <= refactor into an array
+n1 = Nest.new(tr1, s1, tr1.tallness, "squishy")
+n2 = Nest.new(tr2, s1, 11, "squirrel?")
+n3 = Nest.new(tr1, s2, 1, "structurally sound")
+
+
 
 # name, age
 a1 = Author.new("Mike", 33)
