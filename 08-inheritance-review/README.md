@@ -3,13 +3,13 @@ Inheritance Review
 
 ## Objectives
 
-* Review how to inherit from a parent class.
-* Review what `super` is doing.
-* Review helper methods.
-* Review the look up chain.
-* Investigate `self` in the child and parent classes.
-* Review how to `extend` to add class methods.
-* Review how to `include` to add instance methods.
+* [x] Review how to inherit from a parent class.
+* [x] Review what `super` is doing.
+* [x] Review helper methods.
+* [x] Review the look up chain.
+* [ ] Investigate `self` in the child and parent classes.
+* [ ] Review how to `extend` to add class methods.
+* [ ] Review how to `include` to add instance methods.
 
 ---
 

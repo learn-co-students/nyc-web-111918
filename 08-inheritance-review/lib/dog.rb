@@ -1,3 +1,3 @@
-class Dog
-
+class Dog < Animal
+  include AModuleName::InstanceMethods
 end

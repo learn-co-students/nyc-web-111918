@@ -1,5 +1,11 @@
 require_relative 'spec_helper.rb'
 
+kitty_cat = Cat.new("Pooky")
+dog = Dog.new("Rocky")
+fish = Fish.new("Nemo")
+binding.pry
+
+
 describe Cat do
 
   let(:cat) { Cat.new("crookshanks") }
