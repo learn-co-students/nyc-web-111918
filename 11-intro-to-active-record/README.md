@@ -13,7 +13,7 @@ Intro to Active Record
 ```
 User >--< Movie
   |         |
-  -< Queue >-
+  -< Queue >- <--- JOIN TABLE
 ```
 
 - Classes are singular, tables are plural

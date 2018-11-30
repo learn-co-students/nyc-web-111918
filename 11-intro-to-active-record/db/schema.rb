@@ -10,13 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_30_202237) do
+ActiveRecord::Schema.define(version: 2018_11_30_211850) do
 
-  # validations <== mod 2
+  create_table "movies", force: :cascade do |t|
+    t.text "title"
+  end
+
   create_table "users", force: :cascade do |t|
     t.text "name"
     t.text "email"
     t.integer "age"
+  end
+
+  create_table "watch_lists", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "movie_id"
   end
 
 end
