@@ -10,9 +10,12 @@ class TweetsApp
     message = gets.chomp
 
     tweet = Tweet.new({'username' => username, 'message' => message})
+    tweet.save # gives us flexibility in our ORM
 
-    tweets = Tweet.all
+    tweets = Tweet.all # to also pull from the database
     render(tweets)
+
+    binding.pry
   end
 
   private

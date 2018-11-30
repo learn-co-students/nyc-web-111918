@@ -13,20 +13,76 @@
 
 1. Books and Authors where each book has a single author. Books should have a title
 
+  one-to-many
+
+  books
+  id | title                  | author_id
+  1  | Harry Potter           | 1
+  2  | Name of the Wind       | 2
+  3  | Perdido Street Station | 3
+  4  | Chamber of Secrets     | 1
+  4  | Chamber of Secrets Fake| 4
+
+  authors
+  id | name                    | ssn
+  1  | Joanne Kowling Rowling  |
+  2  | Patrick Rothfuss        |
+  3  | China Miebell           |
+  4  | Joanne Kowling Rowling  |
+
   Q: Write the SQL to find all books written by a certain author given that author's id
 
   ```SQL
-
+  SELECT books.title
+  FROM books
+  JOIN authors
+  ON authors.id = books.author_id
+  WHERE authors.id = 1
   ```
 
 2. Books and Authors where each book can have one or MULTIPLE authors. Books should have a title and authors should have a name.
 
   - What type of relationship is this?
+    - many-to-many
+
+    books
+    id | title                  
+    1  | Harry Potter           
+    2  | Name of the Wind       
+    3  | Perdido Street Station
+    4  | Chamber of Secrets     
+    5  | Chamber of Secrets Fake
+
+    authors_works_where <== named anything
+    book_authors
+    id | author_id | book_id
+    1  | 1         | 1
+    2  | 1         | 4
+    3  | 2         | 2
+    4  | 3         | 3
+    5  | 4         | 5
+
+    authors
+    id | name                    
+    1  | Joanne Kowling Rowling  
+    2  | Patrick Rothfuss        
+    3  | China Miebell           
+    4  | Joanne Kowling Rowling  
+
+    comics
+    id | title
+
 
   Q. Write the SQL to find all books written by certain author given their name
 
   ``` SQL
-
+  SELECT books.title
+  FROM books
+  JOIN book_authors
+  ON book_authors.book_id = books.id
+  JOIN authors
+  ON book_authors.author_id = authors.id
+  WHERE authors.id = 1
   ```
 
 3. Squirrels have Nests in Trees -- Build table
@@ -68,15 +124,34 @@ Q: Write the SQL to find all Squirrels in a "christmas tree"
 
 What are the four ways we can interact with Data?
 
+Create
+- CREATE, INSERT
+- Book.new
+
+Read
+- SELECT
+- b1.title, Book.all.select
+
+Update
+- UPDATE, ALTER
+- b1.title = "New Title"
+
+Delete
+- DELETE, DROP TABLE
+- delete if ..., .pop, .shift, .clear, .delete/.destroy
+
 ### Active Record Pattern
 
 - each table in our DB should correspond to a ruby class (Model)
 - table is ALWAYS plural and the Model/Class is Singular
+  - books => Book
+  - authors => Author
 - instances of one of those classes are represented as a row in our DB
 - each column represents an attribute on each instance
 
 ### How to persist Data?
 
+- save information so when we run a program again, it will be there
 
 ## Code Walkthrough
 

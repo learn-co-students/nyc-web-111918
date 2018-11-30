@@ -4,3 +4,13 @@ desc 'Loads up a console!'
 task :console do
   Pry.start
 end
+
+desc 'Meow!'
+task :meow do
+  puts "Meow!!"
+end
+
+desc 'Loads up a console!'
+task :test do
+  # other stuff here
+end
