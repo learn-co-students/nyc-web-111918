@@ -8,6 +8,16 @@ Intro to Active Record
 - Practice with ActiveRecord::Base instance and class methods
 - Perform persistent CRUD actions on one model using ActiveRecord
 
+## Netflix! c. 2014 -- the ones shipped to your house! DVDs!
+
+```
+User >--< Movie
+  |         |
+  -< Queue >-
+```
+
+- Classes are singular, tables are plural
+
 ## Overview
 
 - Review Project Setup (files, migrations, models)
@@ -22,7 +32,7 @@ Intro to Active Record
 
 ## Remember These Steps!!!
 
-1. create model
+1. create model => class
 2. create migration
 3. run migration
 4. check your schema
