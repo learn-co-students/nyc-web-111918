@@ -33,31 +33,46 @@
 
 ### New!
 
-- *Model*:
-- *View*:
-- *Controller*:
+- *Model*: database => class, all your data
+- *View*: index, templates, how people see <=
+- *Controller*: it's everything in between
 - *RESTful Routing (REST)*:
-- *convention over configuration*:
+  - REST
+  - REpresentational State Transfer <== Representing something, data == state, transfer it somewhere
+  - Routes => URL => endpoints
+- *convention over configuration*: follow convention, it's easier to follow; generic structure for EVERYTHING; car companies are all gonna give you a wheel! yes!!!
 
 ## Deliverables
 
+CRUD => Create, Read, Update, Destroy/Delete
+        GET, POST, DELETE, PATCH/PUT
+
 For each deliverable what is the route?
+Book app => www.barnesandfoble.com
 
 - view information on an individual book
-
+  - SHOW
+  - GET /books/:id
 
 - view all books
-
+  - INDEX
+  - GET /books
 
 - create a new book
-
+  - GET /books/new => give you a form so you can give it the info
+  - POST /books => send something to the server that says can you make this book pretty please?
+  - redirects
 
 - edit an existing book
-
+  - GET /books/:id/edit <= some form to edit it
+  - PATCH/PUT /books/:id
+  - redirects
 
 - delete an existing book
+  - DELETE /books/:id
 
-
+No homepage!!
+7 RESTful Routes
 
 ## Lecture Notes
 
