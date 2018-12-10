@@ -16,6 +16,9 @@ class App
     resp = Rack::Response.new
 
     # TODO: create some new songs
+    Song.new("Cry me a river")
+    Song.new("Bohemian Rhapasody")
+    Song.new("Curse you wall what?")
 
     if request.path =~ /songs/
       song_list_items = Song.all.map { |song| "<li>#{song.title}</li>" }.join

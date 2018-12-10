@@ -4,11 +4,11 @@
 
 ## SWBATs
 
-- [ ] Explain in general how the internet works
-- [ ] Define the world wide web
-- [ ] Describe the client-server model and the request-response lifecycle
-- [ ] Utilize the browser to make a request and see a response
-- [ ] Practice making a web server with Rack
+- [x] Explain in general how the internet works
+- [x] Define the world wide web
+- [x] Describe the client-server model and the request-response lifecycle
+- [x] Utilize the browser to make a request and see a response
+- [x] Practice making a web server with Rack
 
 ### History of the Internet
 

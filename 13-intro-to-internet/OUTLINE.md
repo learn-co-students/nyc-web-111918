@@ -1,0 +1,30 @@
+- What is the Internet? WWW?
+- History
+  - Standford <--> UCLA, ARPANET
+  - Vinton Cerf => TCP
+    - HTTP, HTML, Browser
+    - TCP/IP => Protocols!
+    - IP Address == URL
+- Bringing it all together!
+  - client, ISP, server, the cloud == wires
+    - Request / Response
+  - router, DNS, IP Address
+    - traceroute, :80
+- Intermission!
+- Documentation for the web?
+  - MDN
+  - Types of HTTP Requests
+    - Why do we keep saying GET?
+    - GET Request Response Cycle
+  - HTTP => CRUD
+    - HTTP 1.1 <-- GET, POST == Internet is Broken!
+    - HTTP Verbs
+    - GET == Read
+    - POST == Create
+    - DELETE == Delete
+    - PATCH/PUT == Update => PATCH
+- Code Example! Rack!
+  - README
+  - Walkthrough
+  - rackup, localhost:port
+  - Static vs Dynamic
