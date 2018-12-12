@@ -2,7 +2,7 @@
 
 <form action="/trainers/<%= @trainer.id %>" method="post">
   <input type="hidden" name="_method" value="patch">
-  trainer name:<input type="text" name="t_name" value="<%= @trainer.t_name %>">
-  Badges? <input type="number" name="badges" value="<%= @trainer.badges %>">
+  trainer name:<input type="text" name="trainer[t_name]" value="<%= @trainer.t_name %>">
+  Badges? <input type="number" name="trainer[badges]" value="<%= @trainer.badges %>">
   <input type="submit" value="this is what comes out on the website">
 </form>

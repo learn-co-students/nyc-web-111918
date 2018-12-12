@@ -43,7 +43,11 @@ class TrainersController < ApplicationController
   # do i need to know which trainer??
   # pppst yes
   patch '/trainers/:id' do
-    binding.pry
+    #model
+    @trainer = Trainer.find(params[:id])
+    @trainer.update(params[:trainer])
+    #view // resp
+    redirect "/trainers/#{@trainer.id}"
   end
 
 

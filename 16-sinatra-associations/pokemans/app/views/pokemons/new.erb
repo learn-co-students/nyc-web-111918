@@ -1,0 +1,13 @@
+<h3> Pokemon form for NEW POKEMON 152</h3>
+
+<form action="/pokemons" method="post">
+  <input type="text" name="pokemon[nickname]" placeholder="name">
+  <input type="text" name="pokemon[health]" placeholder="health number i think">
+
+  <select name="pokemon[trainer_id]">
+    <% @trainers.each do |trainer| %>
+      <option value="<%= trainer.id %>"><%= trainer.t_name %></option>
+    <% end %>
+  </select>
+  <input type="submit" value="WHOSE THAT POKEMON?">
+</form>
