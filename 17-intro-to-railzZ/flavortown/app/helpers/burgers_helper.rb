@@ -1,0 +1,2 @@
+module BurgersHelper
+end

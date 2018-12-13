@@ -1,0 +1,2 @@
+class Hotdog < ApplicationRecord
+end
