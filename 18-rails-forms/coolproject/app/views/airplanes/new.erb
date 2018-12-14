@@ -1,0 +1,24 @@
+<h2> make a new plane!</h2>
+
+
+<p>HTML FORM</p>
+<form action="/airplanes" method="post">
+  <!-- <input type="hidden" name="" value=""> -->
+    <label for="model"> Model: </label>
+    <input type="text" name="airplane[model]" placeholder="give me a model name">
+    <label for="wings"> Wings: </label>
+    <input type="number" name="wings" placeholder="#num of wings">
+    <input type="submit">
+</form>
+
+
+
+<p> FORM TAG FORM </p>
+<%= form_tag "/airplanes", method: :post do %>
+  <%= text_field_tag :model %>
+  <%= number_field_tag :wings %>
+  <%= submit_tag :submit %>
+<% end %>
+
+
+<%= render 'form' %>

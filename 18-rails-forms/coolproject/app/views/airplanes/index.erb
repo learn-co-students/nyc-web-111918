@@ -1,0 +1,12 @@
+<h1> INDEX for my planes</h1>
+
+
+
+<% @aeroplanesz.each do |airplane| %>
+    <%= link_to "what will be displayed", showmetheshowpage_path(airplane) %>  <%= airplane.model %>   </br>
+    <%= link_to "delete this instance bwahaah 😈", airplane_path(airplane), method: :delete %>
+
+
+    <%= button_to('hmmm🤔', airplane_path(airplane),
+          method: "delete", remote: true, data: { confirm: 'really? wut? lolz', disable_with: 'loading...' }) %>
+<% end %>

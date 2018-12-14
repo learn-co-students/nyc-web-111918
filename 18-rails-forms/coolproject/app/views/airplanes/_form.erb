@@ -1,0 +1,11 @@
+
+
+<%= form_for @airplane do |f| %>
+  <%= f.label :model%>
+  <%# @airplane.model %>
+  <%= f.text_field :model %>
+  <%= f.label :wings%>
+  <%# @airplane.wings %>
+  <%= f.number_field :wings %>
+  <%= f.submit %>
+<% end %>
