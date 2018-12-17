@@ -13,6 +13,9 @@ Rails Associations & Forms
 * CRUD it up! Build out the 7 RESTful routes.
 * Learn about `collection_select` in a `form_for`.
 
+YuGiOh Cards ==> MtG, Pokemon TCG, Vampire
+* Deck >- Player
+
 ## Lecture Notes
 
 ### CRUD Review

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cards: 1
+  type: 
+  player_id: 1
+
+two:
+  cards: 1
+  type: 
+  player_id: 1

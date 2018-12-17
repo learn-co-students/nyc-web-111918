@@ -1,0 +1,29 @@
+<h1> New Deck </h1>
+
+<%= form_for @deck do |f| %>
+  <%= f.number_field :cards %>
+  <%= f.text_field :deck_type %>
+  <!-- <%= f.number_field :player_id %> -->
+  <%= f.collection_select :player_id, @players, :id, :name %> <!-- the method of the action -->
+
+  <!--
+  I hate docs!
+
+    first arg is method we want to call on @kid (:party_id) THE KEY🔑 for my Params,
+    the collection we want to use to populate the dropdown(Party.all || @parties which is a reference from the controller to be Party.all),
+    the value we want in our params: Party#id,
+    what do we want to display in the tag itself? Party#theme
+  -->
+
+  <!-- <select>
+  <option value="player.id">player.name</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select>
+oif course, someone abstracted this for us
+-->
+
+
+  <%= f.submit %>
+<% end %>
