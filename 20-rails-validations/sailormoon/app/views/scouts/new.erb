@@ -1,0 +1,21 @@
+<h1> make a new scout ™️</h1>
+
+<ul>
+  <% if @errors %>
+    <% @errors.each do |error| %>
+    <li> <%= error %> </li>
+    <% end %>
+  <% end%>
+</ul>
+
+<%= form_for @scout do |f| %>
+  <%= f.label :planet %>
+  <%= f.text_field :planet %>
+  <%= f.label :age %>
+  <%= f.number_field :age %>
+  <%= f.label :pet %>
+  <%= f.check_box :pet %>
+  <%= f.label :hair_color %>
+  <%= f.text_field :hair_color %>
+  <%= f.submit %>
+<% end %>

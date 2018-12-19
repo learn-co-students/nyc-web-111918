@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  planet: MyString
+  hair_color: MyString
+  pet: false
+  age: 1
+
+two:
+  planet: MyString
+  hair_color: MyString
+  pet: false
+  age: 1
