@@ -1,0 +1,11 @@
+<h1> USER SHOW PAAAAAAAAAAAAAAAAAAAAGE</h1>
+
+<%= button_to 'Logout', logout_path, method: :delete %>
+
+<p><%= @user.username %></p>
+
+<%= image_tag @user.avatar %>
+
+<% if current_user.id == @user.id %>
+  <%= button_to 'Delete this Account', user_path(@user), method: :delete, data: { confirm: 'are u sure lol' } %>
+<% end %>

@@ -1,0 +1,787 @@
+Started GET "/" for 127.0.0.1 at 2018-10-01 11:20:55 -0400
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.1) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateNachos (20180910171518)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "nachos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "price" integer DEFAULT 15, "description" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180910171518_create_nachos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180910171518"]]
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-10-01 15:21:13.477182"], ["updated_at", "2018-10-01 15:21:13.477182"]]
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[36mNacho Create (0.4ms)[0m  [1m[32mINSERT INTO "nachos" ("name", "price", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "trash can nachos"], ["price", 25], ["description", "nachos literally made in a garbage can in the alleyway behind the restaurant"], ["created_at", "2018-10-01 15:21:17.316118"], ["updated_at", "2018-10-01 15:21:17.316118"]]
+  ↳ db/seeds.rb:1
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[36mNacho Create (0.3ms)[0m  [1m[32mINSERT INTO "nachos" ("name", "price", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "mac and cheese nachos"], ["price", 12], ["description", "bacon mac and cheese on top of nachos––WARNING: Guys All American Restaurant™️ is not responsible for any bodily harm caused by eating the food here"], ["created_at", "2018-10-01 15:21:17.320129"], ["updated_at", "2018-10-01 15:21:17.320129"]]
+  ↳ db/seeds.rb:1
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[36mNacho Create (0.3ms)[0m  [1m[32mINSERT INTO "nachos" ("name", "price", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "deep fried pizza nachos"], ["price", 35], ["description", "a heaping serving of nachos wrapped in an extra large meat lovers pizza and then deep fried"], ["created_at", "2018-10-01 15:21:17.323403"], ["updated_at", "2018-10-01 15:21:17.323403"]]
+  ↳ db/seeds.rb:1
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[36mNacho Create (0.3ms)[0m  [1m[32mINSERT INTO "nachos" ("name", "price", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "danger dogs"], ["price", 3], ["description", "nachos smothered in sad hot dogs"], ["created_at", "2018-10-01 15:21:17.325631"], ["updated_at", "2018-10-01 15:21:17.325631"]]
+  ↳ db/seeds.rb:1
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[36mNacho Create (0.4ms)[0m  [1m[32mINSERT INTO "nachos" ("name", "price", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "chicken pot pie nachos"], ["price", 7], ["description", "someone please stop this dumpster fire from cooking"], ["created_at", "2018-10-01 15:21:17.328518"], ["updated_at", "2018-10-01 15:21:17.328518"]]
+  ↳ db/seeds.rb:1
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[36mNacho Create (0.2ms)[0m  [1m[32mINSERT INTO "nachos" ("name", "price", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "dessert nachos"], ["price", 5], ["description", "extra cheese nachos topped with deep fried oreos and tempura ice cream"], ["created_at", "2018-10-01 15:21:17.330824"], ["updated_at", "2018-10-01 15:21:17.330824"]]
+  ↳ db/seeds.rb:1
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[36mNacho Create (0.3ms)[0m  [1m[32mINSERT INTO "nachos" ("name", "price", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "deluxe nachos"], ["price", 75], ["description", "15 year old aged gruyere cheese, gold flakes, truffle oil, wagyu beef, served atop free range non GMO organic corn chips rolled by hand in Machu Pichu"], ["created_at", "2018-10-01 15:21:17.332891"], ["updated_at", "2018-10-01 15:21:17.332891"]]
+  ↳ db/seeds.rb:1
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:1
+Started GET "/" for 127.0.0.1 at 2018-10-01 11:21:24 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/evans.wang2/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/evans.wang2/.rvm/gems/ruby-2.3.3/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/evans.wang2/.rvm/gems/ruby-2.3.3/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb (2.8ms)
+Completed 200 OK in 18ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/nachos" for 127.0.0.1 at 2018-10-01 11:21:27 -0400
+Processing by NachosController#index as HTML
+  Rendering nachos/index.html.erb within layouts/application
+  [1m[36mNacho Load (0.2ms)[0m  [1m[34mSELECT "nachos".* FROM "nachos"[0m
+  ↳ app/views/nachos/index.html.erb:15
+  Rendered nachos/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 503ms (Views: 496.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/nachos" for 127.0.0.1 at 2018-10-01 11:21:29 -0400
+Processing by NachosController#index as HTML
+  Rendering nachos/index.html.erb within layouts/application
+  [1m[36mNacho Load (0.3ms)[0m  [1m[34mSELECT "nachos".* FROM "nachos"[0m
+  ↳ app/views/nachos/index.html.erb:15
+  Rendered nachos/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 37ms (Views: 35.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/nachos" for 127.0.0.1 at 2018-10-01 11:21:32 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/nachos"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/nachos/1" for 127.0.0.1 at 2018-10-01 13:45:32 -0400
+Processing by NachosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNacho Load (0.2ms)[0m  [1m[34mSELECT  "nachos".* FROM "nachos" WHERE "nachos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/nachos_controller.rb:19
+  Rendering nachos/show.html.erb within layouts/application
+  Rendered nachos/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 49ms (Views: 33.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/nachos/4" for 127.0.0.1 at 2018-10-01 13:45:41 -0400
+Processing by NachosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mNacho Load (0.2ms)[0m  [1m[34mSELECT  "nachos".* FROM "nachos" WHERE "nachos"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/nachos_controller.rb:19
+  Rendering nachos/show.html.erb within layouts/application
+  Rendered nachos/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 41ms (Views: 38.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/nachos" for 127.0.0.1 at 2018-10-01 13:46:13 -0400
+Processing by NachosController#index as HTML
+Completed 500 Internal Server Error in 92ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `get_items_from_cart' for #<NachosController:0x007fa1a21a7070>):
+  
+activesupport (5.2.1) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.1) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.1) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.1) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/nachos" for 127.0.0.1 at 2018-10-01 13:46:26 -0400
+Processing by NachosController#index as HTML
+Completed 500 Internal Server Error in 81ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `get_items_from_cart' for #<NachosController:0x007fa19ebb5480>):
+  
+activesupport (5.2.1) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.1) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.1) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.1) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/nachos" for 127.0.0.1 at 2018-10-01 13:47:03 -0400
+Processing by NachosController#index as HTML
+  Rendering nachos/index.html.erb within layouts/application
+  Rendered nachos/index.html.erb within layouts/application (6.9ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     6: 🤔
+     7: 
+     8: <ol>
+     9:   <% @cart_items.each do |item| %>
+    10:     <li><%= item.name %></li>
+    11:   <% end %>
+    12: </ol>
+  
+app/views/nachos/index.html.erb:9:in `_app_views_nachos_index_html_erb___1264160511858413481_70166090924540'
+app/controllers/nachos_controller.rb:8:in `index'
+Started GET "/nachos" for 127.0.0.1 at 2018-10-01 13:47:15 -0400
+Processing by NachosController#index as HTML
+  Rendering nachos/index.html.erb within layouts/application
+  [1m[36mNacho Load (0.3ms)[0m  [1m[34mSELECT "nachos".* FROM "nachos"[0m
+  ↳ app/views/nachos/index.html.erb:11
+  Rendered nachos/index.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 36ms (Views: 34.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-01 13:49:45 -0400
+  
+NameError (undefined local variable or method `add_nacho_to_cart' for #<ActionDispatch::Routing::Mapper:0x007fa1a21c5340>):
+  
+config/routes.rb:6:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/rails/info/routes" for 127.0.0.1 at 2018-10-01 13:49:47 -0400
+Processing by Rails::InfoController#routes as HTML
+  Rendering /Users/evans.wang2/.rvm/gems/ruby-2.3.3/gems/railties-5.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /Users/evans.wang2/.rvm/gems/ruby-2.3.3/gems/actionpack-5.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [2 times] (2.7ms)
+  Rendered /Users/evans.wang2/.rvm/gems/ruby-2.3.3/gems/actionpack-5.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (7.4ms)
+  Rendered /Users/evans.wang2/.rvm/gems/ruby-2.3.3/gems/railties-5.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (31.8ms)
+Completed 200 OK in 64ms (Views: 51.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes" for 127.0.0.1 at 2018-10-01 13:50:19 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/evans.wang2/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Rails::InfoController#routes as HTML
+  Rendering /Users/evans.wang2/.rvm/gems/ruby-2.3.3/gems/railties-5.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /Users/evans.wang2/.rvm/gems/ruby-2.3.3/gems/actionpack-5.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [8 times] (3.5ms)
+  Rendered /Users/evans.wang2/.rvm/gems/ruby-2.3.3/gems/actionpack-5.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (7.5ms)
+  Rendered /Users/evans.wang2/.rvm/gems/ruby-2.3.3/gems/railties-5.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 42ms (Views: 29.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/nachos" for 127.0.0.1 at 2018-10-01 13:53:05 -0400
+Processing by NachosController#index as HTML
+  Rendering nachos/index.html.erb within layouts/application
+  [1m[36mNacho Load (0.2ms)[0m  [1m[34mSELECT "nachos".* FROM "nachos"[0m
+  ↳ app/views/nachos/index.html.erb:11
+  Rendered nachos/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 257ms (Views: 253.9ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/cart" for 127.0.0.1 at 2018-10-01 13:53:53 -0400
+  
+ActionController::RoutingError (No route matches [PATCH] "/cart"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started PATCH "/cart" for 127.0.0.1 at 2018-10-01 13:54:23 -0400
+Processing by CartController#update as HTML
+  Parameters: {"authenticity_token"=>"CLxFnyUK4wd9l3JLlGmJnrHtMyta7WUCgwvPURcCDmm8L7RVRrJiI3Nk+tKsk2m35f8/Bg5SOTF84g/yvei6Iw==", "nacho_id"=>"1"}
+No template found for CartController#update, rendering head :no_content
+Completed 204 No Content in 244342ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/nachos" for 127.0.0.1 at 2018-10-01 13:58:31 -0400
+Processing by NachosController#index as HTML
+  Rendering nachos/index.html.erb within layouts/application
+  [1m[36mNacho Load (0.3ms)[0m  [1m[34mSELECT "nachos".* FROM "nachos"[0m
+  ↳ app/views/nachos/index.html.erb:11
+  Rendered nachos/index.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 86ms (Views: 78.2ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/cart" for 127.0.0.1 at 2018-10-01 13:58:33 -0400
+Processing by CartController#update as HTML
+  Parameters: {"authenticity_token"=>"pxMh/Sj0CWbzIyyk+HvNYdtrwo38odxbsBS0Q4UEDfwTgNA3S0yIQv3QpD3AgS1Ij3nOoKgegGhP/XTgL+65tg==", "nacho_id"=>"1", "nacho_name"=>"trash can nachos"}
+No template found for CartController#update, rendering head :no_content
+Completed 204 No Content in 154406ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/nachos" for 127.0.0.1 at 2018-10-01 14:01:07 -0400
+Processing by NachosController#index as HTML
+  Rendering nachos/index.html.erb within layouts/application
+  [1m[36mNacho Load (0.5ms)[0m  [1m[34mSELECT "nachos".* FROM "nachos"[0m
+  ↳ app/views/nachos/index.html.erb:13
+  Rendered nachos/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 80ms (Views: 44.9ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/cart" for 127.0.0.1 at 2018-10-01 14:01:11 -0400
+Processing by CartController#update as HTML
+  Parameters: {"authenticity_token"=>"NsPi1OC0RCFbZMfkXol8gb18tcYasdPjbsmGUxzNiQSCUBMegwzFBVWXT31mc5yo6W65604Oj9CRIEbwtic9Tg==", "nacho_id"=>"2", "nacho_name"=>"mac and cheese nachos"}
+Redirected to http://localhost:3000/nachos
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/nachos" for 127.0.0.1 at 2018-10-01 14:01:11 -0400
+Processing by NachosController#index as HTML
+  Rendering nachos/index.html.erb within layouts/application
+  [1m[36mNacho Load (0.2ms)[0m  [1m[34mSELECT "nachos".* FROM "nachos"[0m
+  ↳ app/views/nachos/index.html.erb:13
+  Rendered nachos/index.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 39ms (Views: 36.1ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/cart" for 127.0.0.1 at 2018-10-01 14:01:16 -0400
+Processing by CartController#update as HTML
+  Parameters: {"authenticity_token"=>"PYI5/5PyGdwtu8RgiTbKjB23wuxkXYpSoS/WTvLvkYaJEcg18EqY+CNITPmxzCqlSaXOwTDi1mFexhbtWAUlzA==", "nacho_id"=>"1", "nacho_name"=>"trash can nachos"}
+Redirected to http://localhost:3000/nachos
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/nachos" for 127.0.0.1 at 2018-10-01 14:01:16 -0400
+Processing by NachosController#index as HTML
+  Rendering nachos/index.html.erb within layouts/application
+  [1m[36mNacho Load (0.5ms)[0m  [1m[34mSELECT "nachos".* FROM "nachos"[0m
+  ↳ app/views/nachos/index.html.erb:13
+  Rendered nachos/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 44ms (Views: 42.7ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/cart" for 127.0.0.1 at 2018-10-01 14:01:18 -0400
+Processing by CartController#update as HTML
+  Parameters: {"authenticity_token"=>"MX3nF/yzaZTRRo3Ak/yWEmMiVIhqevj+O5IgTXtgLXuF7hbdnwvosN+1BVmrBnY7NzBYpT7FpM3Ee+Du0YqZMQ==", "nacho_id"=>"5", "nacho_name"=>"chicken pot pie nachos"}
+Redirected to http://localhost:3000/nachos
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/nachos" for 127.0.0.1 at 2018-10-01 14:01:18 -0400
+Processing by NachosController#index as HTML
+  Rendering nachos/index.html.erb within layouts/application
+  [1m[36mNacho Load (0.2ms)[0m  [1m[34mSELECT "nachos".* FROM "nachos"[0m
+  ↳ app/views/nachos/index.html.erb:13
+  Rendered nachos/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 33ms (Views: 32.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/nachos" for 127.0.0.1 at 2018-10-01 14:01:39 -0400
+Processing by NachosController#index as HTML
+  Rendering nachos/index.html.erb within layouts/application
+  [1m[36mNacho Load (0.2ms)[0m  [1m[34mSELECT "nachos".* FROM "nachos"[0m
+  ↳ app/views/nachos/index.html.erb:13
+  Rendered nachos/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 33ms (Views: 32.4ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mNacho Load (0.5ms)[0m  [1m[34mSELECT  "nachos".* FROM "nachos" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mNacho Load (0.4ms)[0m  [1m[34mSELECT  "nachos".* FROM "nachos" WHERE "nachos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNacho Load (0.6ms)[0m  [1m[34mSELECT "nachos".* FROM "nachos" WHERE "nachos"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  [1m[36mNacho Load (0.4ms)[0m  [1m[34mSELECT "nachos".* FROM "nachos" WHERE "nachos"."id" IN (?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 3]]
+Started GET "/nachos" for 127.0.0.1 at 2018-10-01 14:33:08 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/evans.wang2/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by NachosController#index as HTML
+  [1m[36mNacho Load (0.2ms)[0m  [1m[34mSELECT  "nachos".* FROM "nachos" WHERE "nachos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering nachos/index.html.erb within layouts/application
+  Rendered nachos/index.html.erb within layouts/application (16.9ms)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for #<Nacho:0x007fbbae9a12c8>):
+     6: 
+     7: <h4>Your Cart: </h4>
+     8: <ol>
+     9:   <% @cart_items.each do |item| %>
+    10:     <%= item.name %>
+    11:   <% end %>
+    12: </ol>
+  
+app/views/nachos/index.html.erb:9:in `_app_views_nachos_index_html_erb__1666389123542448384_70222025404020'
+app/controllers/nachos_controller.rb:8:in `index'
+Started GET "/nachos" for 127.0.0.1 at 2018-10-01 14:34:21 -0400
+Processing by NachosController#index as HTML
+  Rendering nachos/index.html.erb within layouts/application
+  [1m[36mNacho Load (0.2ms)[0m  [1m[34mSELECT "nachos".* FROM "nachos"[0m
+  ↳ app/views/nachos/index.html.erb:17
+  Rendered nachos/index.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 217ms (Views: 213.4ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/cart" for 127.0.0.1 at 2018-10-01 14:34:35 -0400
+Processing by CartController#update as HTML
+  Parameters: {"authenticity_token"=>"kUyBlA4Yj/YV9BuQhN044VGIYUh3i5wfmgP5iBiN6Ivut68eiCicnN3bNXhrlPsQ1lC2LBzjDNAtWVkKsnejMQ==", "nacho_id"=>"1", "nacho_name"=>"trash can nachos"}
+Redirected to http://localhost:3000/nachos
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/nachos" for 127.0.0.1 at 2018-10-01 14:34:35 -0400
+Processing by NachosController#index as HTML
+  [1m[36mNacho Load (0.2ms)[0m  [1m[34mSELECT  "nachos".* FROM "nachos" WHERE "nachos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering nachos/index.html.erb within layouts/application
+  [1m[36mNacho Load (0.2ms)[0m  [1m[34mSELECT "nachos".* FROM "nachos"[0m
+  ↳ app/views/nachos/index.html.erb:17
+  Rendered nachos/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 40ms (Views: 36.5ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/cart" for 127.0.0.1 at 2018-10-01 14:34:59 -0400
+Processing by CartController#update as HTML
+  Parameters: {"authenticity_token"=>"xJxiHNkuwLQKhzzyyL+Ml08U1x153TXnIjyNDm+DdRS7Z0yWXx7T3sKoEhon9k9myMwAeRK1pSiVZi2MxXk+rg==", "nacho_id"=>"3", "nacho_name"=>"deep fried pizza nachos"}
+Redirected to http://localhost:3000/nachos
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/nachos" for 127.0.0.1 at 2018-10-01 14:34:59 -0400
+Processing by NachosController#index as HTML
+  [1m[36mNacho Load (0.3ms)[0m  [1m[34mSELECT "nachos".* FROM "nachos" WHERE "nachos"."id" IN (?, ?)[0m  [["id", 1], ["id", 3]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering nachos/index.html.erb within layouts/application
+  [1m[36mNacho Load (0.4ms)[0m  [1m[34mSELECT "nachos".* FROM "nachos"[0m
+  ↳ app/views/nachos/index.html.erb:17
+  Rendered nachos/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 36ms (Views: 33.4ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/cart" for 127.0.0.1 at 2018-10-01 14:35:00 -0400
+Processing by CartController#update as HTML
+  Parameters: {"authenticity_token"=>"kkJbqRQnPj6PlQP6Tctzfctlk9mAdier4K1Y8YJyAi3tuXUjkhctVEe6LRKigrCMTL1Eveset2RX9/hzKIhJlw==", "nacho_id"=>"4", "nacho_name"=>"danger dogs"}
+Redirected to http://localhost:3000/nachos
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/nachos" for 127.0.0.1 at 2018-10-01 14:35:00 -0400
+Processing by NachosController#index as HTML
+  [1m[36mNacho Load (0.9ms)[0m  [1m[34mSELECT "nachos".* FROM "nachos" WHERE "nachos"."id" IN (?, ?, ?)[0m  [["id", 1], ["id", 3], ["id", 4]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering nachos/index.html.erb within layouts/application
+  [1m[36mNacho Load (0.7ms)[0m  [1m[34mSELECT "nachos".* FROM "nachos"[0m
+  ↳ app/views/nachos/index.html.erb:17
+  Rendered nachos/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 52ms (Views: 46.6ms | ActiveRecord: 1.5ms)
+
+
+Started PATCH "/cart" for 127.0.0.1 at 2018-10-01 14:35:01 -0400
+Processing by CartController#update as HTML
+  Parameters: {"authenticity_token"=>"h+Vn26b+FwXEqw8TTvUP6PBVX+CxrrguCDebfFWAR3L4HklRIM4EbwyEIfuhvMwZd42IhNrGKOG/bTv+/3oMyA==", "nacho_id"=>"5", "nacho_name"=>"chicken pot pie nachos"}
+Redirected to http://localhost:3000/nachos
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/nachos" for 127.0.0.1 at 2018-10-01 14:35:01 -0400
+Processing by NachosController#index as HTML
+  [1m[36mNacho Load (0.3ms)[0m  [1m[34mSELECT "nachos".* FROM "nachos" WHERE "nachos"."id" IN (?, ?, ?, ?)[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 5]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering nachos/index.html.erb within layouts/application
+  [1m[36mNacho Load (0.1ms)[0m  [1m[34mSELECT "nachos".* FROM "nachos"[0m
+  ↳ app/views/nachos/index.html.erb:17
+  Rendered nachos/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 32ms (Views: 30.0ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/cart" for 127.0.0.1 at 2018-10-01 14:35:02 -0400
+Processing by CartController#update as HTML
+  Parameters: {"authenticity_token"=>"emctjbV3b7WxT6dp0RR4XqKJkRJFTAYJWLVYYaJ+1owFnAMHM0d833lgiYE+XbuvJVFGdi4klsbv7/jjCISdNg==", "nacho_id"=>"6", "nacho_name"=>"dessert nachos"}
+Redirected to http://localhost:3000/nachos
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/nachos" for 127.0.0.1 at 2018-10-01 14:35:02 -0400
+Processing by NachosController#index as HTML
+  [1m[36mNacho Load (0.3ms)[0m  [1m[34mSELECT "nachos".* FROM "nachos" WHERE "nachos"."id" IN (?, ?, ?, ?, ?)[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 5], ["id", 6]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering nachos/index.html.erb within layouts/application
+  [1m[36mNacho Load (0.6ms)[0m  [1m[34mSELECT "nachos".* FROM "nachos"[0m
+  ↳ app/views/nachos/index.html.erb:17
+  Rendered nachos/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 53ms (Views: 50.6ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/cart" for 127.0.0.1 at 2018-10-01 14:35:02 -0400
+Processing by CartController#update as HTML
+  Parameters: {"authenticity_token"=>"cfCmU5xGWdfMNdtXm0yjl4DjSlejqBGMHXkqHx8sgVcOC4jZGnZKvQQa9b90BWBmBzudM8jAgUOqI4qdtdbK7Q==", "nacho_id"=>"7", "nacho_name"=>"deluxe nachos"}
+Redirected to http://localhost:3000/nachos
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/nachos" for 127.0.0.1 at 2018-10-01 14:35:02 -0400
+Processing by NachosController#index as HTML
+  [1m[36mNacho Load (0.3ms)[0m  [1m[34mSELECT "nachos".* FROM "nachos" WHERE "nachos"."id" IN (?, ?, ?, ?, ?, ?)[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 7]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering nachos/index.html.erb within layouts/application
+  [1m[36mNacho Load (0.7ms)[0m  [1m[34mSELECT "nachos".* FROM "nachos"[0m
+  ↳ app/views/nachos/index.html.erb:17
+  Rendered nachos/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 44ms (Views: 39.3ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/cart" for 127.0.0.1 at 2018-10-01 14:35:04 -0400
+Processing by CartController#update as HTML
+  Parameters: {"authenticity_token"=>"2QGGBxuhIPrZAJr5KHOgoxTxDc29sRn0/O3L4fucTpym+qiNnZEzkBEvtBHHOmNSkynaqdbZiTtLt2tjUWYFJg==", "nacho_id"=>"2", "nacho_name"=>"mac and cheese nachos"}
+Redirected to http://localhost:3000/nachos
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/nachos" for 127.0.0.1 at 2018-10-01 14:35:04 -0400
+Processing by NachosController#index as HTML
+  [1m[36mNacho Load (0.3ms)[0m  [1m[34mSELECT "nachos".* FROM "nachos" WHERE "nachos"."id" IN (?, ?, ?, ?, ?, ?, ?)[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 7], ["id", 2]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering nachos/index.html.erb within layouts/application
+  [1m[36mNacho Load (0.3ms)[0m  [1m[34mSELECT "nachos".* FROM "nachos"[0m
+  ↳ app/views/nachos/index.html.erb:17
+  Rendered nachos/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 34ms (Views: 31.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/nachos" for 127.0.0.1 at 2018-10-01 14:35:04 -0400
+Processing by NachosController#index as HTML
+  [1m[36mNacho Load (0.2ms)[0m  [1m[34mSELECT "nachos".* FROM "nachos" WHERE "nachos"."id" IN (?, ?, ?, ?, ?, ?, ?)[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 7], ["id", 2]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering nachos/index.html.erb within layouts/application
+  [1m[36mNacho Load (0.3ms)[0m  [1m[34mSELECT "nachos".* FROM "nachos"[0m
+  ↳ app/views/nachos/index.html.erb:17
+  Rendered nachos/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 35ms (Views: 32.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/nachos" for 127.0.0.1 at 2018-10-01 14:35:05 -0400
+Processing by NachosController#index as HTML
+  [1m[36mNacho Load (0.5ms)[0m  [1m[34mSELECT "nachos".* FROM "nachos" WHERE "nachos"."id" IN (?, ?, ?, ?, ?, ?, ?)[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 7], ["id", 2]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering nachos/index.html.erb within layouts/application
+  [1m[36mNacho Load (0.2ms)[0m  [1m[34mSELECT "nachos".* FROM "nachos"[0m
+  ↳ app/views/nachos/index.html.erb:17
+  Rendered nachos/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 44ms (Views: 41.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/nachos" for 127.0.0.1 at 2018-10-01 14:35:05 -0400
+Processing by NachosController#index as HTML
+  [1m[36mNacho Load (0.2ms)[0m  [1m[34mSELECT "nachos".* FROM "nachos" WHERE "nachos"."id" IN (?, ?, ?, ?, ?, ?, ?)[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 7], ["id", 2]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering nachos/index.html.erb within layouts/application
+  [1m[36mNacho Load (0.2ms)[0m  [1m[34mSELECT "nachos".* FROM "nachos"[0m
+  ↳ app/views/nachos/index.html.erb:17
+  Rendered nachos/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 40ms (Views: 37.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/nachos" for 127.0.0.1 at 2018-10-01 14:35:06 -0400
+Processing by NachosController#index as HTML
+  [1m[36mNacho Load (0.2ms)[0m  [1m[34mSELECT "nachos".* FROM "nachos" WHERE "nachos"."id" IN (?, ?, ?, ?, ?, ?, ?)[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 7], ["id", 2]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering nachos/index.html.erb within layouts/application
+  [1m[36mNacho Load (0.2ms)[0m  [1m[34mSELECT "nachos".* FROM "nachos"[0m
+  ↳ app/views/nachos/index.html.erb:17
+  Rendered nachos/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 38ms (Views: 34.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/nachos" for 127.0.0.1 at 2018-10-01 14:35:06 -0400
+Processing by NachosController#index as HTML
+  [1m[36mNacho Load (0.2ms)[0m  [1m[34mSELECT "nachos".* FROM "nachos" WHERE "nachos"."id" IN (?, ?, ?, ?, ?, ?, ?)[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 7], ["id", 2]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering nachos/index.html.erb within layouts/application
+  [1m[36mNacho Load (0.2ms)[0m  [1m[34mSELECT "nachos".* FROM "nachos"[0m
+  ↳ app/views/nachos/index.html.erb:17
+  Rendered nachos/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 39ms (Views: 37.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/nachos" for 127.0.0.1 at 2018-10-01 14:35:15 -0400
+Processing by NachosController#index as HTML
+  Rendering nachos/index.html.erb within layouts/application
+  [1m[36mNacho Load (0.2ms)[0m  [1m[34mSELECT "nachos".* FROM "nachos"[0m
+  ↳ app/views/nachos/index.html.erb:17
+  Rendered nachos/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 33ms (Views: 31.9ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/cart" for 127.0.0.1 at 2018-10-01 14:35:21 -0400
+Processing by CartController#update as HTML
+  Parameters: {"authenticity_token"=>"K1PUSxHMY2iKwZHxoHUi/nBybwzCCnRNgM2hJAnA3axwY9dseoh1sUpChefJ8S2et3t0MUcmCFD+S1wNNicnvg==", "nacho_id"=>"1", "nacho_name"=>"trash can nachos"}
+Redirected to http://localhost:3000/nachos
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/nachos" for 127.0.0.1 at 2018-10-01 14:35:21 -0400
+Processing by NachosController#index as HTML
+  [1m[36mNacho Load (0.1ms)[0m  [1m[34mSELECT  "nachos".* FROM "nachos" WHERE "nachos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering nachos/index.html.erb within layouts/application
+  [1m[36mNacho Load (0.3ms)[0m  [1m[34mSELECT "nachos".* FROM "nachos"[0m
+  ↳ app/views/nachos/index.html.erb:17
+  Rendered nachos/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 35ms (Views: 33.0ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/cart" for 127.0.0.1 at 2018-10-01 14:35:23 -0400
+Processing by CartController#update as HTML
+  Parameters: {"authenticity_token"=>"ZHJyIQpbipwBzLGievLsclWGpMo5n+1d53D/V7MOGIo/QnEGYR+cRcFPpbQTduMSko+/97yzkUCZ9gJ+jOnimA==", "nacho_id"=>"2", "nacho_name"=>"mac and cheese nachos"}
+Redirected to http://localhost:3000/nachos
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/nachos" for 127.0.0.1 at 2018-10-01 14:35:23 -0400
+Processing by NachosController#index as HTML
+  [1m[36mNacho Load (0.2ms)[0m  [1m[34mSELECT "nachos".* FROM "nachos" WHERE "nachos"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering nachos/index.html.erb within layouts/application
+  [1m[36mNacho Load (0.3ms)[0m  [1m[34mSELECT "nachos".* FROM "nachos"[0m
+  ↳ app/views/nachos/index.html.erb:17
+  Rendered nachos/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 31ms (Views: 29.4ms | ActiveRecord: 0.4ms)
+
+

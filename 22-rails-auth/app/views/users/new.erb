@@ -1,0 +1,12 @@
+<h1>Sign up</h1>
+
+<h4><%= flash[:notice] %></h4>
+
+<%= form_for @user do |f| %>
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+
+  <%= f.submit %>
+<% end %>
