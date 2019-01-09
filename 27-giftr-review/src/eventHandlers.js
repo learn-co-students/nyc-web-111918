@@ -2,7 +2,7 @@
 
 function renderAllGifts(giftArray) {
   return giftArray.map(function(gift) {
-    return `<li>${gift.name}</li>`
+    return `<li data-id="${gift.id}">${gift.name}</li>`
     // const newListItem = document.createElement('li')
     // newListItem.textContent = gift.name
     // ulForAppendingGifts.appendChild(newListItem)
