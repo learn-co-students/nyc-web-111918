@@ -1,12 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
+  /****************************** API BASE URL ********************************/
   const API_ENDPOINT = 'http://localhost:3000/dogs'
+
   /****************************** FIND DOM NODES ******************************/
   // find DOM nodes we care about: form, dog table, and the form inputs
-  const dogDetailTable = document.querySelector('#table-body')
-  const dogForm = document.querySelector('#dog-form')
-  const dogNameInput = document.querySelector('#name-input')
-  const dogBreedInput = document.querySelector('#breed-input')
-  const dogGenderInput = document.querySelector('#gender-input')
+  const dogDetailTable = document.querySelector('#table-body') //table
+  const dogForm = document.querySelector('#dog-form') //form
+  const dogNameInput = document.querySelector('#name-input') //name input
+  const dogBreedInput = document.querySelector('#breed-input') //breed input
+  const dogGenderInput = document.querySelector('#gender-input') //gender input
 
   // initial `fetch` when page loads
   fetch(API_ENDPOINT, { method: 'GET' })
@@ -33,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
           dogNameInput.value = dogData.name
           dogBreedInput.value = dogData.breed
           dogGenderInput.value = dogData.sex
-          window.scrollTo(0, 0)
+          window.scrollTo(0, 0) // scroll to the top of the page
       })
     } else if (event.target.dataset.action === 'delete') {
       console.log(event.target)
@@ -62,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch(`${API_ENDPOINT}/${dogIdToUpdate}`, {
       method: 'PATCH',
       // meta-data about our request; data about the request itself
-      headers: {
+      headers: { //could create single headers variable so we don't keep typing these
         // tell the server we are sending a MIME type of application/json
         'Content-Type': 'application/json',
         // tells our server which MIME type we'd like in the response
@@ -96,7 +98,7 @@ function renderAllDogs(dogArray) {
     </tr>`
   )).join('')
 }
-
+// create HTML for a single table row
 function renderSingleDogRow(dog) {
   return (`
     <td>${dog.name}</td>
