@@ -1,0 +1,9 @@
+#main {
+  height: 500px;
+  width: 500px;
+  border: 1px solid black;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-image: url("../assets/background.png");
+}
