@@ -2,27 +2,21 @@
   "dogs": [
     {
       "id": 1,
-      "name": "Baby",
-      "breed": "Scottish Deerhound",
-      "sex": "male"
+      "name": "Baby Back Ribs",
+      "breed": "SCOOTISH",
+      "sex": "TAMALE"
     },
     {
       "id": 2,
-      "name": "Teddy",
+      "name": "Theodore",
       "breed": "Rhodesian Ridgeback",
-      "sex": "female"
+      "sex": "FEMALE"
     },
     {
       "id": 3,
       "name": "Snickers",
       "breed": "Dachshund",
       "sex": "female"
-    },
-    {
-      "id": 4,
-      "name": "Harvey",
-      "breed": "Irish Spaniel",
-      "sex": "male"
     },
     {
       "id": 5,
@@ -45,13 +39,7 @@
     {
       "id": 8,
       "name": "Chloe",
-      "breed": "Dandie Terrier",
-      "sex": "male"
-    },
-    {
-      "id": 9,
-      "name": "Shelby",
-      "breed": "Kuvasz",
+      "breed": "Dandie Terrier!!!!!!",
       "sex": "male"
     },
     {
@@ -59,12 +47,6 @@
       "name": "Patches",
       "breed": "Dingo",
       "sex": "male"
-    },
-    {
-      "id": 11,
-      "name": "Jasper",
-      "breed": "Redbone",
-      "sex": "female"
     },
     {
       "id": 12,
@@ -81,13 +63,7 @@
     {
       "id": 14,
       "name": "Coco",
-      "breed": "Maltese",
-      "sex": "female"
-    },
-    {
-      "id": 15,
-      "name": "Pepper",
-      "breed": "Westhighland Terrier",
+      "breed": "I HOPE NO 1 SAW ME HIT MY HEAD ON THE WALL JUST NOW",
       "sex": "female"
     },
     {
@@ -98,7 +74,7 @@
     },
     {
       "id": 17,
-      "name": "Chance",
+      "name": "Chance The Wrapper",
       "breed": "Flatcoated Retriever",
       "sex": "female"
     },
@@ -109,14 +85,8 @@
       "sex": "male"
     },
     {
-      "id": 19,
-      "name": "Penny",
-      "breed": "Wheaten Terrier",
-      "sex": "male"
-    },
-    {
       "id": 20,
-      "name": "Coco",
+      "name": "Coco de Chanel",
       "breed": "Affenpinscher",
       "sex": "female"
     }
