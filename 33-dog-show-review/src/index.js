@@ -76,24 +76,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // update the DOM to reflect the changes we've made
         // give each table row a css id dog-{dog.id} //see the renderAllDogs fn for that
         const trToUpdate = document.querySelector(`#dog-${updatedDog.id}`)
-        trToUpdate.innerHTML = (`
-          <td>${updatedDog.name}</td>
-          <td>${updatedDog.breed}</td>
-          <td>${updatedDog.sex}</td>
-          <td>
-            <button data-id="${updatedDog.id}" data-action="edit">
-              Edit
-            </button>
-          </td>
-          <td>
-            <button data-id="${updatedDog.id}" data-action="delete">
-              Delete
-            </button>
-          </td>
-        `)
+        trToUpdate.innerHTML = renderSingleDogRow(updatedDog)
         // re-render a SINGLE tr based on the updated data from ye olde db
       })
     // update any state management variables if applicable
+    // clear form inputs using reset
     event.target.reset()
   }) // end submit handler
 
@@ -105,21 +92,27 @@ document.addEventListener('DOMContentLoaded', () => {
 function renderAllDogs(dogArray) {
   return dogArray.map(dog => (
     `<tr id="dog-${dog.id}">
-      <td>${dog.name}</td>
-      <td>${dog.breed}</td>
-      <td>${dog.sex}</td>
-      <td>
-        <button data-id="${dog.id}" data-action="edit">
-          Edit
-        </button>
-      </td>
-      <td>
-        <button data-id="${dog.id}" data-action="delete">
-          Delete
-        </button>
-      </td>
+      ${renderSingleDogRow(dog)}
     </tr>`
   )).join('')
+}
+
+function renderSingleDogRow(dog) {
+  return (`
+    <td>${dog.name}</td>
+    <td>${dog.breed}</td>
+    <td>${dog.sex}</td>
+    <td>
+      <button data-id="${dog.id}" data-action="edit">
+        Edit
+      </button>
+    </td>
+    <td>
+      <button data-id="${dog.id}" data-action="delete">
+        Delete
+      </button>
+    </td>
+  `)
 }
 
 // helper function to parse our response object when using `fetch`
