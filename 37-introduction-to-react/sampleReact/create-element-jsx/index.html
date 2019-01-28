@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+<body>
+    <div id='root'></div>
+    <script type='text/babel'>
+        const rootElement = document.getElementById('root')
+
+        // React.createElement
+        //const newElement = React.createElement('div', { className: 'Container', children: 'Ciao from React' })
+        // JSX
+        const newElement = <div className='container'>Ciao from React</div>
+        //const message = 'Ciao from React'
+        // {} leaves JSX and enters JS
+        // const newElement = <div className='container'>{message}</div>
+
+        // {} leaves JSX and enters JS
+        // const newElement = <div className='container'>{(()=>message)()}</div>
+
+        // Expressions inside {}
+        // let message
+        // const newElement = <div className='container'>{message ? message : 'Something else'}</div>
+
+        // JSX inside className
+        // const message = 'Ciao from React'
+        // const elementClassName = 'container'
+        // const newElement = <div className={elementClassName}>{message}</div>
+
+        // Passing props
+        // const props = {
+        //     className:'container',
+        //     children: 'Ciao from React'
+        // }
+        // const newElement = <div {...props} />
+
+        // Passing props with default values
+        // const props = {
+        //     children: 'Ciao from React'
+        // }
+        // const newElement = <div className='default-class' {...props} />
+
+        // Overwrite props
+        // const props = {
+        //     children: 'Ciao from React',
+        //     children: 'Ciao from React'
+        // }
+        // const newElement = <div className='default-class' {...props} children='Hi from React' />
+
+
+        console.log(newElement)
+        ReactDOM.render(newElement, rootElement)
+    </script>
+</body>
+</html>

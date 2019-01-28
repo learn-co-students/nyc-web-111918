@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+    <!-- <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/prop-types/15.6.2/prop-types.js"></script> -->
+<body>
+    <div id='root'></div>
+    <script type='text/babel'>
+        const rootElement = document.getElementById('root')
+
+        //Duplicate components
+        const newElement =  (<div>
+                                <h1>Hello from React</h1>
+                                <h1>Hello from React</h1>
+                            </div>)
+
+        // 'Reusable' components with functions
+        // const welcomeMessage = props => <h1>{props.message}</h1>
+        // const newElement =  <div>
+        //                         {welcomeMessage({message:'Ciao from React'})}
+        //                         {welcomeMessage({message:'Hi from React'})}
+        //                     </div>
+
+        // // 'Reusable' components with reactCreateElement
+        // const welcomeMessage = props => <h1>{props.message}</h1>
+        // const newElement =  <div>
+        //                         {React.createElement(welcomeMessage, {message:'Ciao from React'})}
+        //                         {React.createElement(welcomeMessage, {message:'Hi from React'})}
+        //                     </div>
+
+        // 'Reusable' components with JSX
+        // const WelcomeMessage = props => <h1>{props.message}</h1>
+        // const newElement =  <div>
+        //                         <WelcomeMessage msg="Ciao from React" />
+        //                         <WelcomeMessage msg="Ciao from React" />
+        //                     </div>
+
+        // 'Reusable' components with JSX and Children prop
+        // const WelcomeMessage = props => <h1>{props.children}</h1>
+        // const newElement =  <div>
+        //                         <WelcomeMessage>Ciao from React</WelcomeMessage>
+        //                         <WelcomeMessage>Hi from React</WelcomeMessage>
+        //                     </div>
+
+        // Supplemental!
+        // // 'Reusable' components with JSX and Children prop
+        // const WelcomeMessage = props => <h1>{props.msg}</h1>
+
+        // WelcomeMessage.propTypes = {
+        //     msg: PropTypes.string.isRequired
+        // }
+        // const newElement =  <div>
+        //                         <WelcomeMessage msg="Hi from React" />
+
+        //                     </div>
+
+
+        console.log(newElement)
+        ReactDOM.render(newElement, rootElement)
+    </script>
+</body>
+</html>
