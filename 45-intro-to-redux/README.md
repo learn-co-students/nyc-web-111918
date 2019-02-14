@@ -1,6 +1,16 @@
 # Why Redux
 
+
+Three Big Ideas
+
+* All of our state in one big object
+* Describe changes to our state by sending messages (called Actions,) plain JS object that MUSt have a key called `type`
+* our stateful logic will change with a pure function called a reducer
+
+
+
 ![gif](http://g.recordit.co/s2OFw0VtYb.gif)
+
 
 The code you clone down will have the functionality working as seen above.  
 
