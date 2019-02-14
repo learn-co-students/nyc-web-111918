@@ -27,13 +27,30 @@ import { createStore } from 'redux'
   // }
 // }
 
+// FROM LECTURE
+// const reducer = (state = {count: 99}, action) => {
+//   console.log('the current state', state);
+//   console.log('the current action', action);
+//   switch(action.type) {
+//     case 'INCREMENT':
+//       return {count: state.count + action.amount}
+//     case 'DECREMENT':
+//       return {count: state.count - 1}
+//     default:
+//       return state
+//   }
+//
+// }
 
-const reducer = (state = {count: 99}, action) => {
+const reducer = (state = [{count: 0}, {count: 0},{count: 0},{count: 0},{count: 0}], action) => {
   console.log('the current state', state);
   console.log('the current action', action);
+
+  // REDUCERS MUST BE PURE FUNCTIONS
+  // ?? NOT DESTRUCTIVELY CHANGING THE OBJECT
   switch(action.type) {
     case 'INCREMENT':
-      return {count: state.count + 1}
+      return {count: state.count + action.amount}
     case 'DECREMENT':
       return {count: state.count - 1}
     default:
@@ -55,7 +72,9 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Counter />
+        {store.getState().map((counter, index) => {
+          return <Counter index={index} />
+        })}
       </div>
     );
   }
@@ -81,13 +100,16 @@ class Counter extends Component {
     })
   }
 
-  increment = () => {
-    store.dispatch({type: 'INCREMENT', someKey: 'whatever'})
+  increment = (amount) => {
+    store.dispatch({type: 'INCREMENT', amount: amount, otherThing: 'hi' })
     // this.setState(prevState => ({ count: prevState.count + 1 }));
   };
 
   decrement = () => {
     store.dispatch({type: 'DECREMENT'})
+    // const dispatch = (action) => {
+    //   return reducer(state, action)
+    // }
     // this.setState(prevState => ({ count: prevState.count - 1 }));
   };
 
@@ -101,15 +123,16 @@ class Counter extends Component {
   render() {
     return (
       <div className="Counter">
-        <h1>{store.getState().count}</h1>
+        <h1>{0}</h1>
         <button onClick={this.decrement}> - </button>
-        <button onClick={this.increment}> + </button>
-        <button onClick={this.increment}> +2 </button>
-        <button onClick={this.increment}> +5 </button>
+        <button onClick={() => this.increment(1)}> + </button>
+        <button onClick={() => this.increment(2)}> +2 </button>
+        <button onClick={() => this.increment(5)}> +5 </button>
       </div>
     );
   }
 }
+// <h1>{store.getState().count}</h1>
 
 // should NOT make 2 new functions, addBy2, addBy5
 // we also DO NOT want to call increment 5 times in a loop
