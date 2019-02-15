@@ -6,6 +6,7 @@ import './App.css';
 import App from './App'
 
 import { createStore } from 'redux'
+import { Provider } from 'react-redux'
 
 // whatever this function returns will become the new state
 // const reducer = (state = {isSnowing: false}, action) => {
@@ -43,7 +44,7 @@ import { createStore } from 'redux'
 //
 // }
 
-const reducer = (state = {count: 0}, action) => {
+const reducer = (state = {count: 86}, action) => {
   console.log('the current state', state);
   console.log('the current action', action);
 
@@ -75,4 +76,9 @@ store.subscribe(() => {
 // should NOT make 2 new functions, addBy2, addBy5
 // we also DO NOT want to call increment 5 times in a loop
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);
