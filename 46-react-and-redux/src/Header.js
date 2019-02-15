@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
 import logo from './logo.svg'
+import { connect } from 'react-redux'
 
-// renderDescription = () => {
-//   // const count = store.getState().count this will have to change
-//   const remainder = count % 5;
-//   const upToNext = 5 - remainder;
-//   return `The current count is less than ${count + upToNext}`;
-// };
 
 class Header extends Component {
+  renderDescription = () => {
+      const count = this.props.count
+      const remainder = count % 5;
+      const upToNext = 5 - remainder;
+      return `The current count is less than ${count + upToNext}`;
+    }
+    
   render() {
     return (
       <header className="App-header">
@@ -19,4 +21,8 @@ class Header extends Component {
   }
 }
 
-export default Header
+const mapStateToProps = (state) => {
+  return { count: state.count }
+}
+
+export default connect(mapStateToProps)(Header)
