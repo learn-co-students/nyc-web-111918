@@ -1,0 +1,64 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.team-list {
+  position: relative;
+  margin: 0 auto;
+  width: 80%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #2874A6;
+  border: solid;
+  border-width: 3px;
+  border-color: #FF5733;
+  padding: 20px;
+}
+
+.header {
+  background-color: #273746 !important;
+  border: solid !important;
+  border-width: 5px !important;
+  border-color: #FF5733 !important;
+  color: #DAF7A6 !important;
+}
+
+.team {
+  background-color: #DAF7A6;
+  color: #273746;
+}
+
+.player-details {
+  position: relative !important;
+  margin: 10px auto !important;
+  background-color: #2874A6 !important;
+}
+
+.detail-text {
+  color: #DAF7A6 !important;
+}
