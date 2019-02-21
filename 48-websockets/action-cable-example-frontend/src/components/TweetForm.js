@@ -15,9 +15,9 @@ class TweetForm extends Component {
   handleSubmit = e => {
     e.preventDefault();
     adapter.createTweet({ content: this.state.value })
-      .then(tweet => {
-        this.props.addTweet(tweet)
-      })
+      // .then(tweet => {
+      //   this.props.addTweet(tweet)
+      // })
 
     this.setState({
       value: ''
