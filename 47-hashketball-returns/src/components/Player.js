@@ -2,12 +2,12 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 const Player = (props) => {
-	console.log("INSIDE PLAYER", props)
-	return (
-		<div onClick={() => props.selectPlayer(props.player)}>
-			<p>{props.player.name}</p>
-		</div>
-	)
+  console.log("INSIDE PLAYER", props)
+  return (
+    <div onClick={() => props.selectPlayer(props.player)}>
+      <p>{props.player.name}</p>
+    </div>
+  )
 }
 
 // DON'T NEED TO READ IN THIS COMPONENT
@@ -16,11 +16,11 @@ const Player = (props) => {
 // }
 
 function mdp (dispatch){
-	return {
-		selectPlayer: (player) => {
-			dispatch({type: "CHANGE_PLAYER", payload: player})
-		}
-	}
+  return {
+    selectPlayer: (player) => {
+      dispatch({type: "CHANGE_PLAYER", payload: player})
+    }
+  }
 }
 
 

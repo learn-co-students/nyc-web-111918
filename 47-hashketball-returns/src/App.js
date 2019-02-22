@@ -8,47 +8,47 @@ import { connect } from 'react-redux'
 
 
 class App extends Component {
-	state = {
-		// teams: gamesData.teams,
-		// selectedPlayer: null
-	}
+  state = {
+    // teams: gamesData.teams,
+    // selectedPlayer: null
+  }
 
-	// handleSelectPlayer = (player) => {
-	// 	this.setState({
-	// 		selectedPlayer: player
-	// 	})
-	// }
+  // handleSelectPlayer = (player) => {
+  //  this.setState({
+  //    selectedPlayer: player
+  //  })
+  // }
 
-	render() {
-		console.log("IN APP", this.props)
-		return (
-			<div className="App">
-				<NavHeader />
-				<TeamList />
-				{!this.props.selectedPlayer ? <div> Click Player for Details </div> :
-					<PlayerDetails selectedPlayer={this.props.selectedPlayer}/>}
-			</div>
-		);
-	}
+  render() {
+    console.log("IN APP", this.props)
+    return (
+      <div className="App">
+        <NavHeader />
+        <TeamList />
+        {!this.props.selectedPlayer ? <div> Click Player for Details </div> :
+          <PlayerDetails selectedPlayer={this.props.selectedPlayer}/>}
+      </div>
+    );
+  }
 }
 
 function msp(state){
-	// console.log("MSP", state)
-	return {
-		selectedPlayer: state.selectedPlayer
-	}
+  // console.log("MSP", state)
+  return {
+    selectedPlayer: state.selectedPlayer
+  }
 }
 
 // function mdp(dispatch){
-// 	// console.log("MDP", dispatch)
-// 	return {
-// 		selectPlayer: (player) => {
-// 			dispatch({type: "CHANGE_PLAYER", payload: player})
-// 		}
-// 		// sortPlayer: () => {
-// 		// 	dispatch({type: "SORT_PLAYERS"})
-// 		// }
-// 	}
+//  // console.log("MDP", dispatch)
+//  return {
+//    selectPlayer: (player) => {
+//      dispatch({type: "CHANGE_PLAYER", payload: player})
+//    }
+//    // sortPlayer: () => {
+//    //  dispatch({type: "SORT_PLAYERS"})
+//    // }
+//  }
 // }
 
 export default connect(msp)(App);
